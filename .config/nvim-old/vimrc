@@ -1,0 +1,30 @@
+syntax on
+set guifont=Ubuntu
+set number relativenumber   " Show number column
+set mouse=a                 " Use mouse in nVim
+set numberwidth=1           " Padding column number
+set clipboard=unnamedplus   " Clipboard function
+set showcmd                 " shows partial commands in the last line of the screen
+set ruler                   " show line number current buffer
+set cursorline              " will higlight the line that currently contains the cursor
+set encoding=utf-8          " Most common character encoding
+set showmatch               " Moving to matching brackets
+set sw=4                    " Space to tab
+set winblend=10             " pseudo-transparency, range(0-100).
+set pumblend=10             " pseudo-transparency, menu. range(0-30).
+set lazyredraw              " avoid rewriting the buffer "
+set hlsearch                " When highlighting of search matches is enabled.
+set incsearch               " incremental searching.
+set inccommand=split        " Incrementallly show effects of commands, open split.
+set ignorecase              " searches are case insensitive...
+set smartcase               " ... unless they contain at least one capital letter.
+set laststatus=2            " show last status in buffer.
+set noshowmode              " show mode.
+set sidescrolloff=999       " hold cursor horizontally centered in the window.
+set termguicolors           " terminal color.
+set nowrap                    " Continue on the next line if unsufficient columns (see linebreak)
+set wildmenu
+
+set listchars=tab:\|\ ,trail:· list     " Put · when placing space
+
+highlight Normal ctermbg=NONE
