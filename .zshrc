@@ -3,11 +3,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
-plugins=(
-    git
-    fast-syntax-highlighting
-#    zsh-autosuggestions
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
@@ -50,7 +46,14 @@ alias dcu="docker-compose up -d"
 alias dcr="docker-compose restart"
 alias dcps="docker-comppose ps"
 
-alias dolar='node ~/workspace/projects/webScraping/dolar_today/src/index.js'
+# Build
+alias wks-build="cd && cd workspace && rmmodule && cd /home/dan/ && zip -r workspace.zip workspace && ls | grep workspace.zip"
+alias rmmodule="find . -name node_modules | xargs -I_ rm -rf _"  # eliminar carpetas node_modules recursivo
+
+# description command
+alias tld="tldr"
+
+#alias dolar='node ~/workspace/projects/webScraping/dolar_today/src/index.js'
 
 # ls cat
 alias cat='/bin/bat'
@@ -146,4 +149,4 @@ export NVM_DIR="$HOME/.nvm"
 
 #}}}
 #
-source ~/.profile
+#source ~/.profile

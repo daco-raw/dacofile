@@ -40,8 +40,8 @@ mapper('n', '<leader><', '10<c-w><') --}}}
 -- Run current file and Testing
 mapper('n', '<leader>1', ':!node %<CR>') --{{{
 mapper('n', '<leader>2', ':!python %<CR>')
-mapper('n', '<leader>3', ':!sh %<CR>')
-mapper('n', '<leader>3', ':!go %<CR>')
+mapper('n', '<leader>3', ':!go run %<CR>')
+mapper('n', '<leader>4', ':!sh %<CR>')
 
 
 ---------------------------------
