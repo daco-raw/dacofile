@@ -39,7 +39,6 @@ alias vz='nvim $HOME/.zshrc'
 alias sz='source ~/.zshrc'
 
 alias docs=' cd /run/media/$USER/dataBackup/'
-alias js='$HOME/Documentos/runjs-2.2.2/runjs&! q'
 
 alias dcd="docker-compose down"
 alias dcu="docker-compose up -d"
@@ -47,13 +46,11 @@ alias dcr="docker-compose restart"
 alias dcps="docker-comppose ps"
 
 # Build
-alias wks-build="cd && cd workspace && rmmodule && cd /home/dan/ && zip -r workspace.zip workspace && ls | grep workspace.zip"
+alias wks-build="cd && cd workspace && rmmodule && cd $HOME && zip -r workspace.zip workspace && ls | grep workspace.zip"
 alias rmmodule="find . -name node_modules | xargs -I_ rm -rf _"  # eliminar carpetas node_modules recursivo
 
 # description command
 alias tld="tldr"
-
-#alias dolar='node ~/workspace/projects/webScraping/dolar_today/src/index.js'
 
 # ls cat
 alias cat='/bin/bat'

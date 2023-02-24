@@ -31,6 +31,15 @@ mapper('v', '<leader>;', '20<CR>')
 mapper('v', '<leader>k', '10-<CR>')
 mapper('v', '<leader>p', '20-<CR>') --}}}
 
+-- tmux
+mapper('n', '<c-l>', '<c-w>l')  -- >
+mapper('n', '<c-k>', '<c-w>k')  -- ^
+mapper('n', '<c-j>', '<c-w>j')  -- <
+mapper('n', '<c-h>', '<c-w>h')  -- V
+
+--{{{
+--mapper('n', '<c-k>', '<c-w>k') --{{{
+
 -- Resize
 mapper('n', '<leader>=', '<c-w>5+') --{{{
 mapper('n', '<leader>-', '<c-w>5-')
@@ -40,8 +49,7 @@ mapper('n', '<leader><', '10<c-w><') --}}}
 -- Run current file and Testing
 mapper('n', '<leader>1', ':!node %<CR>') --{{{
 mapper('n', '<leader>2', ':!python %<CR>')
-mapper('n', '<leader>3', ':!go run %<CR>')
-mapper('n', '<leader>4', ':!sh %<CR>')
+mapper('n', '<leader>3', ':!sh %<CR>')
 
 
 ---------------------------------
