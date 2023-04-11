@@ -24,4 +24,5 @@ picom --config $HOME/.config/bspwm/picom.conf &
 /usr/bin/dunst &
 run volumeicon &
 run parcellite &
-run albert &
+#run albert &
+run ulauncher &

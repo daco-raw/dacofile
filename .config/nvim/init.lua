@@ -12,7 +12,8 @@ require 'settings.automations'-- }}}
 -------------- Themes --------------{{{
 require 'plugins-config.themes.onedark'
 --require 'plugins-config.themes.ayu'
---require 'plugins-config.themes.tokyonight'}}}
+--require 'plugins-config.themes.tokyonight'
+--}}}
 
 -------------- Plugins --------------{{{
 require 'plugins-config.lsp'
