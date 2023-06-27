@@ -1,4 +1,4 @@
-# Themes - plugins - settings
+#/ Themes - plugins - settings
 # {{{
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -6,7 +6,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-eval "$(starship init zsh)"
 setopt histignorealldups sharehistory
 setopt GLOB_DOTS
 # }}}
@@ -15,7 +14,15 @@ setopt GLOB_DOTS
 # {{{
 alias p='ping 8.8.8.8 | grep "64 bytes" '
 alias q=exit
-alias tools='cd && cd tools'
+
+# App basics install
+alias appinstall="sudo dnf install neovim neofetch zsh gh tmux ranger stow tldr lsd bat rclone firejail docker docker-compose youtube-dl -y"
+#chsh -s $(which zsh)"
+
+# Build
+alias workspace-start="docs;cd IT/linux_tools;cp ./workspace.zip ~/;cd;unzip ./workspace.zip;rm workspace.zip;ls | grep work"
+alias workspace-build="cd ~/workspace;rmmodule;cd $HOME;zip -r workspace.zip workspace;ls | grep workspace*.zip;docs;cd IT;rm workspace.zip;mv ~/workspace.zip . -v;pwd"
+alias rmmodule="find . -name node_modules | xargs -I_ rm -rf _"  # rm folder node_modules recursivo
 
 alias v='nvim ./'
 alias vim='nvim'
@@ -23,6 +30,7 @@ alias t='tmux new -s local'
 alias e='ranger ./'
 
 alias temp='watch sensors' #download fedora lm_sensors
+alias pm="pnpm"
 
 # Gits
 alias g='git init'
@@ -45,9 +53,6 @@ alias dcu="docker-compose up -d"
 alias dcr="docker-compose restart"
 alias dcps="docker-compose ps"
 
-# Build
-alias workspace-build="cd ~/workspace;rmmodule;cd $HOME;zip -r workspace.zip workspace;ls | grep workspace*.zip;docs;cd IT;rm workspace.zip;mv ~/workspace.zip . -v;pwd"
-alias rmmodule="find . -name node_modules | xargs -I_ rm -rf _"  # eliminar carpetas node_modules recursivo
 
 # description command
 alias tld="tldr"
@@ -134,14 +139,20 @@ ex ()
 }
 # }}}
 
+# find . ! -name $f1 ! -name $f2 -type f -delete  -->  para excluir archivo y borrar lo demas
 
 # fzf | NVM
-# {{{
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+###{{{
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #}}}
+
+# pnpm
+export PNPM_HOME="/home/daco/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
